@@ -1,5 +1,5 @@
-# Sets the base container image to Windows Server 2019 Core
-FROM microsoft/windowsservercore
+# Sets the base container image to Windows Server 2022 Core
+FROM mcr.microsoft.com/windows/servercore:ltsc2022
 
 # Metadata indicating an image maintainer.
 LABEL "version" = "1.0" "Description" = "Core with IIS"
@@ -8,4 +8,4 @@ LABEL "version" = "1.0" "Description" = "Core with IIS"
 RUN dism.exe /online /enable-feature /all /featurename:Web-Server /NoRestart
 
 # Creates the Hello World file and adds our message to it.
-RUN echo "Hello World – I was created from a Dockerfile!" > c:\inetpub\wwwroot\index.html
+RUN echo "Hello World ï¿½ I was created from a Dockerfile!" > c:\inetpub\wwwroot\index.html
